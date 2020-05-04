@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="Assets\scripts\ball.cs" />
     <Compile Include="Assets\scripts\ButtonScript.cs" />
     <Compile Include="Assets\scripts\playerScript.cs" />
@@ -84,6 +85,12 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+=======
+    <Compile Include="Assets\Scripts\ball.cs" />
+    <Compile Include="Assets\Scripts\BallSpawner.cs" />
+    <Compile Include="Assets\Scripts\ButtonScript.cs" />
+    <Compile Include="Assets\Scripts\playerScript.cs" />
+>>>>>>> Stashed changes
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/GitKraken/tinySoccorUprising/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
