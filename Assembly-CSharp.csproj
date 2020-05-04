@@ -63,7 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
+=======
+    <Compile Include="Assets\Scripts\ball.cs" />
+>>>>>>> AaronTrial
     <Compile Include="Assets\Scripts\playerScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/lynbr/Desktop/AIE Work 2020/Game Jam 2/tinySoccorUprising/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
