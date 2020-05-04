@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ball.cs" />
     <Compile Include="Assets\Scripts\playerScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Aaron/Desktop/tiny soccer uprising/TinySoccorUprising/TinySoccorUprising/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
