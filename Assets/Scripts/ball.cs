@@ -15,6 +15,5 @@ public class ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.AddForce(new Vector3(0, 0, -100) * Time.deltaTime,ForceMode.Impulse);
     }
 }
