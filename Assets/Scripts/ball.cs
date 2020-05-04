@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ball : MonoBehaviour
 {
@@ -16,4 +17,10 @@ public class ball : MonoBehaviour
     void Update()
     {
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
 }
