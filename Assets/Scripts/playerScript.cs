@@ -43,7 +43,8 @@ public class playerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-           rb.AddTorque(transform.right * -10);
+           rb.AddTorque(transform.right * -100);
+            Debug.Log("spin!");
         }
     }
 }

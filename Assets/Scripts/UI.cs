@@ -9,13 +9,13 @@ public class UI : MonoBehaviour
     public Text player1ScoreText;
     public Text player2ScoreText;
     public Text TimerText;
-    public GameObject player1Goal;
-    public GameObject player2Goal;
     public float maxTimer;
 
     //private variables
-    private float player1Score;
-    private float player2Score;
+    [HideInInspector]
+    public float player1Score;
+    [HideInInspector]
+    public float player2Score;
     private float minutes;
     private float seconds;
     void Start()
@@ -45,7 +45,7 @@ public class UI : MonoBehaviour
             }
         }
 
-        player1ScoreText.text = player1Score.ToString();
-        player2ScoreText.text = player2Score.ToString();
+        player1ScoreText.text = "Score: " + player1Score.ToString();
+        player2ScoreText.text = "Score: " + player2Score.ToString();
     }
 }
