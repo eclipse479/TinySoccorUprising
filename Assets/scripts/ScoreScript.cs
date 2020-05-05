@@ -12,6 +12,7 @@ public class ScoreScript : MonoBehaviour
     //public TextMeshProUGUI scoreText;
     public GameObject ballSpawnerObject;
     public GameObject GuiCanvas;
+    public ParticleSystem ScoreParticles;
     public bool isActive = true;
    
 
@@ -31,7 +32,7 @@ public class ScoreScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "ball" && isActive)
+        if (other.gameObject.CompareTag("ball") && isActive)
         {
             //scoreAmount++;
 
@@ -41,10 +42,12 @@ public class ScoreScript : MonoBehaviour
             if(!playerGoal)
             {
                 GuiCanvas.GetComponent<UI>().player1Score++;
+                ScoreParticles.Play();
             }
             else
             {
                 GuiCanvas.GetComponent<UI>().player2Score++;
+                ScoreParticles.Play();
             }
 
             ballSpawnerObject.GetComponent<BallSpawner>().activeBalls--;
