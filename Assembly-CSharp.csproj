@@ -63,14 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Assets\scripts\ball.cs" />
-    <Compile Include="Assets\scripts\BallSpawner.cs" />
-    <Compile Include="Assets\scripts\ButtonScript.cs" />
-    <Compile Include="Assets\scripts\playerScript.cs" />
-    <Compile Include="Assets\scripts\ScoreScript.cs" />
-    <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
-=======
     <Compile Include="Assets\Scripts\ball.cs" />
     <Compile Include="Assets\Scripts\BallSpawner.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
@@ -78,11 +70,8 @@
     <Compile Include="Assets\Scripts\playerControls.cs" />
     <Compile Include="Assets\Scripts\playerScript.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\UI.cs" />
-=======
->>>>>>> master
->>>>>>> master
+    <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
