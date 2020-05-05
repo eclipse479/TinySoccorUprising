@@ -39,7 +39,6 @@ public class playerScriptV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this is fine
         if (!WASD)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -132,7 +131,6 @@ public class playerScriptV2 : MonoBehaviour
                 }
             }
         }
-        //this is fine
         if (returnRotation)
         {
             returnTimer += Time.deltaTime;
