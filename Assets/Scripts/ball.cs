@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ball : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.AddForce(new Vector3(0, 0, -100) * Time.deltaTime,ForceMode.Impulse);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
 }
