@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour
@@ -9,7 +10,13 @@ public class UI : MonoBehaviour
     public Text player1ScoreText;
     public Text player2ScoreText;
     public Text TimerText;
+    public Text WinnerText;
     public float maxTimer;
+    public float timeAfterEnd = -5; //MUST BE A NEGATIVE NUMBER
+
+    public GameObject BallSpawnerObject;
+    public GameObject GoalOne;
+    public GameObject GoalTwo;
 
     //private variables
     [HideInInspector]
@@ -22,7 +29,7 @@ public class UI : MonoBehaviour
     {
         minutes = Mathf.Floor(maxTimer / 60);
         seconds = maxTimer % 60;
-
+        WinnerText.enabled = (false);
        
     }
 
@@ -47,5 +54,45 @@ public class UI : MonoBehaviour
 
         player1ScoreText.text = "Score: " + player1Score.ToString();
         player2ScoreText.text = "Score: " + player2Score.ToString();
+
+        //if the timer is less than zero, based on who has more points, display winner text
+        if(seconds <= 0 && minutes <= 0)
+        {
+            //turn on winner text
+            WinnerText.enabled = (true);
+
+            //turn off timer text (so it doesnt display negative)
+            TimerText.enabled = false;
+
+            BallSpawnerObject.GetComponent<BallSpawner>().isOn = false;
+
+            GoalOne.GetComponent<ScoreScript>().isActive = false;
+            GoalTwo.GetComponent<ScoreScript>().isActive = false;
+
+            //if the score is the same, its a draw
+            if (player1Score == player2Score)
+            {
+                WinnerText.text = "Its a draw!";
+            }
+
+            //if player 1 has more points
+            if(player1Score > player2Score)
+            {
+                WinnerText.text = "Player 1 Wins!";
+            }
+
+            //if player 2 has more points
+            if (player2Score > player1Score)
+            {
+                WinnerText.text = "Player 2 Wins!";
+            }
+
+            //if the seconds are after time is up, are at value
+            if(seconds < timeAfterEnd)
+            {
+                SceneManager.LoadScene("Title");
+            }
+        }
+
     }
 }
