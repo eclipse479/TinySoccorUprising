@@ -14,6 +14,7 @@ public class playerScriptV2 : MonoBehaviour
 
     public float speed = 100;
     public float rotateSpeed = 1;
+    public float kickSpeed = 1;
 
     public float angularDrag = 1.0f;
 
@@ -32,6 +33,7 @@ public class playerScriptV2 : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         rb.angularDrag = angularDrag;
+        returnRotation = false;
     }
 
     // Update is called once per frame
@@ -102,10 +104,10 @@ public class playerScriptV2 : MonoBehaviour
            //when the space bar is up slerp to the half way point
             if(timeTillBack<1)
             {
-                timeTillBack += Time.deltaTime * 2; // twice as fast as there are 2 slerps
+                timeTillBack += Time.deltaTime * 2 * kickSpeed; // twice as fast as there are 2 slerps
             }
 
-
+            //will either go from start to middle or middle to end but will do both so that it will go the correct direction
             if (!secondSlerp)
             {
                 gameObject.transform.rotation = Quaternion.Slerp(start, kickMid, timeTillBack); // first slerp
