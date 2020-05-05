@@ -1,0 +1,22 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "E:/GitKraken/tinySoccorUprising/Assets/Assets/Fooseball Table(Rescaled).mb"`)
+{		
+	file -o "E:/GitKraken/tinySoccorUprising/Assets/Assets/Fooseball Table(Rescaled).mb";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "E:/GitKraken/tinySoccorUprising/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+sysFile -delete "E:/GitKraken/tinySoccorUprising/Temp/CommandPipe";
+
+$donepipeKill = `fopen "E:/GitKraken/tinySoccorUprising/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;
