@@ -39,29 +39,7 @@ public class playerScriptV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this is fine
-        if (!WASD)
-        {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                rb.AddForce(new Vector3(-speed, 0, 0) * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                rb.AddForce(new Vector3(speed, 0, 0) * Time.deltaTime);
-            }
-        }
-        else if (WASD)
-        {
-            if (Input.GetKey(KeyCode.A))
-            {
-                rb.AddForce(new Vector3(-speed, 0, 0) * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                rb.AddForce(new Vector3(speed, 0, 0) * Time.deltaTime);
-            }
-        }
+        
 
         //these cannot occur while object is returning to 0 rotation
         if (Input.GetKey(KeyCode.Space) && !returnRotation) // while space is down
@@ -132,7 +110,6 @@ public class playerScriptV2 : MonoBehaviour
                 }
             }
         }
-        //this is fine
         if (returnRotation)
         {
             returnTimer += Time.deltaTime;
@@ -145,5 +122,31 @@ public class playerScriptV2 : MonoBehaviour
             }
         }
         Debug.Log(built);
+    }
+
+    private void FixedUpdate()
+    {
+        if (!WASD)
+        {
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                rb.AddForce(new Vector3(-speed, 0, 0));
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                rb.AddForce(new Vector3(speed, 0, 0));
+            }
+        }
+        else if (WASD)
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(new Vector3(-speed, 0, 0) * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(new Vector3(speed, 0, 0) * Time.deltaTime);
+            }
+        }
     }
 }
