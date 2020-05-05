@@ -56,6 +56,16 @@ public class BallSpawner : MonoBehaviour
 
         }
 
+        //if(!isOn && activeBalls != 0)
+        //{
+        //    //for each ball child that exists, destroy it
+        //    foreach(Transform ballObject in this.transform)
+        //    {
+        //        Destroy(ballObject.gameObject);
+        //        activeBalls--;
+        //    }
+        //}
+
 
     }
 }
