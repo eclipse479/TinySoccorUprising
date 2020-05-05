@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
     public static int scoreAmount;
-    private Text scoreText;
+    public TextMeshProUGUI scoreText;
+    //public GameObject ballSpawnerObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<Text>();
+        //scoreText = GetComponent<Text>();
         scoreAmount = 0;
     }
 
@@ -28,7 +30,9 @@ public class ScoreScript : MonoBehaviour
         {
             scoreAmount++;
             Destroy(other.gameObject);
-            //activeBalls--;
+
+            //ballSpawnerObject.GetComponent<BallSpawner>().activeBalls--;
+               
         }
     }
 }
