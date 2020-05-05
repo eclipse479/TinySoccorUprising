@@ -8,6 +8,8 @@ public class BallSpawner : MonoBehaviour
     //should be set to the ball prefab
     public GameObject spawnObject;
 
+    public ParticleSystem particleEffect;
+
     //if it is turned on
     public bool isOn = true;
 
@@ -22,6 +24,7 @@ public class BallSpawner : MonoBehaviour
     public float ballSpawnTimerMin = 2;
 
     public float ballSpawnTimerMax = 6;
+
    
     // Update is called once per frame
     void Update()
@@ -32,6 +35,7 @@ public class BallSpawner : MonoBehaviour
             if(activeBalls == 0)
             {
                 Instantiate(spawnObject, this.transform);
+                particleEffect.Play();
                 activeBalls++;
             }
 
@@ -42,9 +46,10 @@ public class BallSpawner : MonoBehaviour
             {
                //create new ball
                Instantiate(spawnObject, this.transform);
+               particleEffect.Play();
 
-               //add a new ball to the count
-               activeBalls++;
+                //add a new ball to the count
+                activeBalls++;
 
                //update the iterator
                iterator -= ballSpawnTimer;
