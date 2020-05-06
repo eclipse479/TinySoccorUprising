@@ -10,6 +10,7 @@ public class playerScriptV2 : MonoBehaviour
     public int characterID;
     private bool returnRotation = false;
     bool secondSlerp = false;
+    private bool kick = false;
 
     public float speed = 100;
     public float rotateSpeed = 1;
@@ -25,7 +26,8 @@ public class playerScriptV2 : MonoBehaviour
 
     private float returnTimer = 0;
 
-    private Quaternion start = new Quaternion(0,0,0,1);
+    private Quaternion start = new Quaternion(0, 0, 0, 1);
+    private Quaternion veryStart;
     private Quaternion kickEnd = new Quaternion(0, 0, 0, 1);
     private Quaternion kickMid = new Quaternion(0, 0, 0, 1);
     void Start()
@@ -33,6 +35,7 @@ public class playerScriptV2 : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         rb.angularDrag = angularDrag;
         returnRotation = false;
+        veryStart = transform.rotation;
     }
 
     // Update is called once per frame
@@ -48,7 +51,7 @@ public class playerScriptV2 : MonoBehaviour
         if (returnRotation)
         {
             returnTimer += Time.deltaTime;
-            gameObject.transform.rotation = Quaternion.Lerp(start, new Quaternion(0, 0, 0, 1), returnTimer);
+            gameObject.transform.rotation = Quaternion.Lerp(start, veryStart, returnTimer);
             if (returnTimer > 1)
             {
                 returnRotation = false;
@@ -62,14 +65,14 @@ public class playerScriptV2 : MonoBehaviour
     {
         if (characterID == 1)
         {
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    rb.AddForce(new Vector3(-speed, 0, 0));
-                }
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    rb.AddForce(new Vector3(speed, 0, 0));
-                }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                rb.AddForce(new Vector3(-speed, 0, 0));
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                rb.AddForce(new Vector3(speed, 0, 0));
+            }
         }
         else if (characterID == 2)
         {
@@ -82,7 +85,7 @@ public class playerScriptV2 : MonoBehaviour
                 rb.AddForce(new Vector3(speed, 0, 0));
             }
         }
-        
+
 
     }
 
@@ -111,6 +114,7 @@ public class playerScriptV2 : MonoBehaviour
             //------------ sets up variables for use ------------
             secondSlerp = false;
             returnRotation = false;
+            kick = true;
             returnTimer = 0;
             timeTillBack = 0;
             //---------------------------------------------------
@@ -122,10 +126,10 @@ public class playerScriptV2 : MonoBehaviour
             float halfWayPoint = distance * 0.5f; // when the slerps need to change
 
             //the 2 points to slerp to
-            kickMid = Quaternion.Euler(startPoint - halfWayPoint, 0, 0);
-            kickEnd = Quaternion.Euler(endPoint, 0, 0);
+            kickMid = Quaternion.Euler(startPoint - halfWayPoint, 180, 0);
+            kickEnd = Quaternion.Euler(endPoint, 180, 0);
         }
-        else if (!Input.GetKey(KeyCode.UpArrow) && !returnRotation) // while up arrow is up
+        else if (!Input.GetKey(KeyCode.UpArrow) && !returnRotation && kick) // while up arrow is up
         {
             //when the UpArrow bar is up slerp to the half way point
             if (timeTillBack < 1)
@@ -162,7 +166,7 @@ public class playerScriptV2 : MonoBehaviour
 
     private void p2Kick()
     {         //these cannot occur while object is returning to 0 rotation
-        if (Input.GetKey(KeyCode.W) && !returnRotation) // while W is down
+        if (Input.GetKey(KeyCode.W) && !returnRotation) // while UpArrow is down
         {
             built += buildSpeed;
             if (built > maxBuilt)
@@ -177,12 +181,13 @@ public class playerScriptV2 : MonoBehaviour
 
 
         }
-        else if (Input.GetKeyUp(KeyCode.W)) // when W is released
+        else if (Input.GetKeyUp(KeyCode.W)) // when UpArrow is released
         {
-            //calculates the points to slerp to when the W bar is released
+            //calculates the points to slerp to when the UpArrow bar is released
             //------------ sets up variables for use ------------
             secondSlerp = false;
             returnRotation = false;
+            kick = true;
             returnTimer = 0;
             timeTillBack = 0;
             //---------------------------------------------------
@@ -197,9 +202,9 @@ public class playerScriptV2 : MonoBehaviour
             kickMid = Quaternion.Euler(startPoint - halfWayPoint, 0, 0);
             kickEnd = Quaternion.Euler(endPoint, 0, 0);
         }
-        else if (!Input.GetKey(KeyCode.W) && !returnRotation) // while W is up
+        else if (!Input.GetKey(KeyCode.W) && !returnRotation && kick) // while up arrow is up
         {
-            //when the W bar is up slerp to the half way point
+            //when the UpArrow bar is up slerp to the half way point
             if (timeTillBack < 1)
             {
                 timeTillBack += Time.deltaTime * 2 * kickSpeed; // twice as fast as there are 2 slerps
