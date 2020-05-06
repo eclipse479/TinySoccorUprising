@@ -306,8 +306,10 @@ Assets\Scripts\ball.cs
 Assets\Scripts\BallSpawner.cs
 Assets\Scripts\ButtonScript.cs
 Assets\Scripts\goal.cs
+Assets\Scripts\playerBody.cs
 Assets\Scripts\playerControls.cs
 Assets\Scripts\playerScript.cs
+Assets\Scripts\playerScriptV2.cs
 Assets\Scripts\ScoreScript.cs
 Assets\Scripts\UI.cs
 "Assets\Starfield Skybox\Demo\Script\LookCamera.cs"
