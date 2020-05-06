@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\BallSpawner.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\goal.cs" />
+    <Compile Include="Assets\Scripts\musicBox.cs" />
     <Compile Include="Assets\Scripts\playerBody.cs" />
     <Compile Include="Assets\Scripts\playerControls.cs" />
     <Compile Include="Assets\Scripts\playerScript.cs" />
