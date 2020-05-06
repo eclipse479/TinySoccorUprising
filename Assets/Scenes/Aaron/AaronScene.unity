@@ -1625,7 +1625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca295458a77ac4c4694f59b868edbbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: 0
 --- !u!82 &1895884736
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1729,6 +1728,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1223052077830788373, guid: 08d10ab1d519d8c4ba2904037f849afe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87bb6044eac55944c9685346189d0455, type: 2}
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1737,7 +1741,7 @@ PrefabInstance:
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.39
+      value: 9.49
       objectReference: {fileID: 0}
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
@@ -1752,7 +1756,7 @@ PrefabInstance:
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
@@ -1762,7 +1766,7 @@ PrefabInstance:
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
@@ -1777,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1223052079106769760, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}
@@ -1788,6 +1792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: characterID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223052079106769763, guid: 08d10ab1d519d8c4ba2904037f849afe,
+        type: 3}
+      propertyPath: maxBuilt
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1223052079106770076, guid: 08d10ab1d519d8c4ba2904037f849afe,
         type: 3}

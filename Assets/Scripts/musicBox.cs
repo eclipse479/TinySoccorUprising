@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class musicBox : MonoBehaviour
 {
-    public bool firstScene = false;
     // Start is called before the first frame update
     private GameObject[] extra;
     private void Awake()
